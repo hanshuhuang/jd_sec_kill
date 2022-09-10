@@ -65,6 +65,7 @@ class SpiderSession:
         return self.get_session().cookies
 
     def set_cookies(self, cookies):
+        print(cookies)
         self.session.cookies.update(cookies)
 
     def load_cookies_from_local(self):
