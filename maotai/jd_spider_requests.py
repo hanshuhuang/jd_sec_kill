@@ -574,8 +574,8 @@ class JdSeckill(object):
         return data
 
     def submit_seckill_order(self):
-        maotai.hhs.go_qishi()
         maotai.hhs.go_shenzhen()
+        maotai.hhs.go_qishi()
         return False
 
         """提交抢购（秒杀）订单
