@@ -1,4 +1,5 @@
 import requests
+from jd_logger import logger
 
 def go_shenzhen():
   url = "https://marathon.jd.com/seckillnew/orderService/submitOrder.action?skuId=100012043978"
@@ -20,7 +21,7 @@ def go_shenzhen():
 
   response = requests.request("POST", url, headers=headers, data=payload)
 
-  print(response.text)
+  logger.info(response.text)
 
 
 def go_qishi():
@@ -43,7 +44,7 @@ def go_qishi():
 
   response = requests.request("POST", url, headers=headers, data=payload)
 
-  print(response.text)
+  logger.info(response.text)
 
 if __name__ == '__main__':
   go_shenzhen()
