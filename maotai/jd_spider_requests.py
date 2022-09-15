@@ -364,7 +364,7 @@ class JdSeckill(object):
                 while True:
                     # self.request_seckill_checkout_page()
                     self.submit_seckill_order()
-                    time.sleep(0.05)
+                    time.sleep(0.1)
             except Exception as e:
                 logger.info('抢购发生异常，稍后继续执行！', e)
             wait_some_time()
