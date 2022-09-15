@@ -5,6 +5,7 @@ import functools
 import json
 import os
 import pickle
+import maotai.hhs
 
 from lxml import etree
 
@@ -306,9 +307,9 @@ class JdSeckill(object):
         """
         用户登陆态校验装饰器。若用户未登陆，则调用扫码登陆
         """
-
         @functools.wraps(func)
         def new_func(self, *args, **kwargs):
+            return func(self, *args, **kwargs)
             if not self.qrlogin.is_login:
                 logger.info("{0} 需登陆后调用，开始扫码登陆".format(func.__name__))
                 self.login_by_qrcode()
@@ -358,9 +359,9 @@ class JdSeckill(object):
         """
         while True:
             try:
-                self.request_seckill_url()
+                # self.request_seckill_url()
                 while True:
-                    self.request_seckill_checkout_page()
+                    # self.request_seckill_checkout_page()
                     self.submit_seckill_order()
             except Exception as e:
                 logger.info('抢购发生异常，稍后继续执行！', e)
@@ -571,6 +572,10 @@ class JdSeckill(object):
         return data
 
     def submit_seckill_order(self):
+        maotai.hhs.go_qishi()
+        maotai.hhs.go_shenzhen()
+        return False
+
         """提交抢购（秒杀）订单
         :return: 抢购结果 True/False
         """
