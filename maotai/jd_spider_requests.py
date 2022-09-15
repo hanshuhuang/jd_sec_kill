@@ -357,6 +357,7 @@ class JdSeckill(object):
         """
         抢购
         """
+        self.timers.start()
         while True:
             try:
                 # self.request_seckill_url()
