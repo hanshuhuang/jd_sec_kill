@@ -1,5 +1,3 @@
-from ast import main
-from unicodedata import name
 import requests
 
 def go_shenzhen():
