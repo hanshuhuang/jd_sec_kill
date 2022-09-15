@@ -46,3 +46,6 @@ def go_qishi():
 
   print(response.text)
 
+if __name__ == '__main__':
+  go_shenzhen()
+  go_qishi()
