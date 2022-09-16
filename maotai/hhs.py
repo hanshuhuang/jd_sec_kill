@@ -1,5 +1,5 @@
 import requests
-from jd_logger import logger
+from maotai.jd_logger import logger
 
 def go_shenzhen():
   url = "https://marathon.jd.com/seckillnew/orderService/submitOrder.action?skuId=100012043978"
